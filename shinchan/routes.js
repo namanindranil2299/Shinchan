@@ -18,16 +18,19 @@ routes.use(session({
     resave:true,
     saveUninitialized:true,
 }));
-
-
+const mongourl='mongodb+srv://namanindra:namanindra@demo.y0wsb.mongodb.net/logintry?retryWrites=true&w=majority'
 const passport = require("passport");
-
-mongoose.connect('mongodb://localhost/logintry',{
+//|| 'mongodb://localhost/logintry'
+mongoose.connect(mongourl  ,{
     useNewUrlParser: true, useUnifiedTopology: true
 }).then(()=>console.log("User DATA Connected"));
 // mongoose.connect('mongodb://localhost/urlShortner',{
 //     useNewUrlParser: true, useUnifiedTopology: true
 // }).then(()=>console.log("URL Data Connected"));
+// mongoose.connection.on('connected',()=>{
+//     console.log("online db connected");
+// });
+
 routes.use(passport.initialize());
 routes.use(passport.session());
 
