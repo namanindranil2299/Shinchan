@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/united/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+    <title>Success</title>
+    
+</head>
+
+<body>
+    <div class="container text-center">
+        <h3 class="p-4" style="color:maroon;">Welcome <%= user.username %> </h3>
+        <h3 class="p-2" style="color:maroon;">Let's Shrink Some Links !! </h3>
+        <a class="btn btn-danger" href="/logout">Logout</a>
+    </div>
+        <div class="container" style="align-content: center !important;">
+            <h1>URL Shrinker</h1>
+            <form action="/shortUrls" method="POST" class="my-4 form-inline">
+                <label for="fullUrl" class="sr-only">URL</label>
+                <input required placeholder="Full URL" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+                <button type="submit" class="btn btn-success">Shrink Url</button>
+            </form>
+        
+            <table style="align-content: center !important;" class="table table-stried table-responsive">
+                <thead>
+                    <tr>
+                        <th>Full URL</th>
+                        <th>Shrinked URL</th>
+                        <th>Click Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% shortUrls.forEach(shortUrl => { %>
+                        <tr>
+                            <td><a href="<%=shortUrl.full%>"><%=shortUrl.full.substring(0,50)%></a></td>
+                            <td><a href="<%=shortUrl.short%>"><%=shortUrl.short%></a></td>
+                            <td><%=shortUrl.clicks%></td>
+                        </tr>
+                    <%});%>
+                    
+                </tbody>
+            </table>
+        </div>
+    
+</body>
+
+</html>
