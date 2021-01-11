@@ -1,0 +1,90 @@
+.text-card {
+  position: relative;
+  width: 80vw;
+
+  margin: auto;
+  padding: 50px;
+  padding-top: 6em;
+  border-radius: 20px;
+  font-family: 'neuzeit-grotesk', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #303336;
+  background-color: #fff;
+  box-shadow: 0 40px 40px -20px #8fc7d577;
+}
+
+.text-card .author-section {
+  position: relative;
+  display: flex;
+  height: 40px;
+}
+
+.text-card .author-avator {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.text-card .author-name {
+  position: relative;
+  display: inline-block;
+  height: fit-content;
+  font-weight: 700;
+  font-size: 0.875em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  transition: 250ms;
+}
+
+.text-card .author-avator-link {
+  margin-right: 20px;
+  border-radius: 40px;
+}
+
+.text-card .author-name-link {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: fit-content;
+}
+
+.text-card p {
+  padding: 50px 0;
+  line-height: 1.75;
+  font-weight: 300;
+  color: #7b8591;
+}
+
+.text-card button {
+  padding: 10px 25px;
+  border: 1px solid #ebebeb;
+  border-radius: 50px;
+  font-family: 'neuzeit-grotesk', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.875em;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #303336;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.text-card button:hover {
+  border: 1px solid #bebebe;
+}
+
+/* Display this style when screen-width is lower than 425px */
+@media only screen and (max-width: 425px) {
+  .text-card {
+    width: 100%;
+    height: auto;
+  }
+}

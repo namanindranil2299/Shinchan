@@ -4,68 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/united/bootstrap.min.css">
-    <title>Authentications</title>
-    <style>
-        .customborder {
-            border-radius: 2%;
-            border: 2px solid #E95420;
+    <title>Literary Committee LNMIIT</title>
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,300,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
-        }
-        
-    </style>
 </head>
 
 <body>
-    
-    <div class="container">
-        <h3 class="text-center p-3">Register Yourself</h3>
-        <div style="margin: 0 auto;" class="col-12 col-md-6 col-lg-5 p-5 customborder">
-
-            <% if(typeof err != 'undefined') {%>
-            <div class="alert alert-dismissible alert-danger">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong><%= err %></strong>
+    <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
+        <div class="container">
+            <div class="navbar-translate">
+                <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse"
+                    data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar"></span>
+                    <span class="navbar-toggler-bar"></span>
+                    <span class="navbar-toggler-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand" href="/public/lc.png">LOGO</a> -->
+                <a href="#" class="brand">
+                    <img src="/lc.png" alt="logo">
             </div>
-            <% } %>
-            <form action="/register" method="POST">
-                <div class="form-group">
-                    <label for="email">Enter Your Email</label>
-                    <input type="email" class="form-control" name="email" id="email" autocomplete="off"
-                        placeholder="Email" value="<%= typeof email != 'undefined' ? email : '' %>">
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom"
+                            href="https://www.facebook.com/lc.lnmiit" target="_blank">
+                            <i class="fa fa-facebook-square"></i>
+                            <p class="hidden-lg-up">Facebook</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/success" target="_blank" class="btn btn-danger btn-round">Enter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="page-header section-dark"
+            style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/antoine-barres.jpg')">
+            <div class="filter"></div>
+            <div class="content-center">
+                <div class="container">
+                    <div class="title-brand">
+                        <span class="presentation-title" style="font-size: 3em !important;">Literary Committee, LNMIIT
+                            Presents</span>
+                        <div class="fog-low">
+                            <img src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png" alt="">
+                        </div>
+                        <div class="fog-low right">
+                            <img src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png" alt="">
+                        </div>
+                    </div>
+
+                    <h1 class="presentation-subtitle text-center" style="font-size:2em ;">Creative Writing Competition
+                    </h1>
+                    <h1 class="presentation-subtitle text-center" style="font-size:1.5em ;">Co-ordinators: Naman
+                        Indranil & Lokesh Pandia</h1>
                 </div>
-                <div class="form-group">
-                    <label for="username">Choose A Username</label>
-                    <input type="text" class="form-control" name="username" id="username" autocomplete="off"
-                        placeholder="Username" value="<%= typeof username != 'undefined' ? username : '' %>">
-                </div>
-                <div class="form-group">
-                    <label for="password">Choose A Password</label>
-                    <input type="password" class="form-control" name="password" id="password" autocomplete="off"
-                        placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="confirmpassword">Confirm Your Password</label>
-                    <input type="password" class="form-control" name="confirmpassword" id="confirmpassword"
-                        autocomplete="off" placeholder="Confirm Password">
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-block btn-outline-primary" value="Register">
-                </div>
-                <p>Already Registered ? <a class="card-link" href="/login">LOGIN Here</a> </p>
-            </form>
+            </div>
+            <div class="moving-clouds"
+                style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png'); ">
+
+            </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="/main.js"></script>
 </body>
 
 </html>

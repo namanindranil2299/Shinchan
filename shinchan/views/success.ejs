@@ -5,49 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/united/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
-    <title>Success</title>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="#">
+    <!-- Link the Font-File -->
+    <link rel="stylesheet" href="https://use.typekit.net/stp3dni.css">
+    <link rel="stylesheet" href="/inner.css">
+    <script src="https://kit.fontawesome.com/a3dc88dac3.js" crossorigin="anonymous"></script>
+    <title>Literary Committee LNMIIT</title>
+
 </head>
 
 <body>
-    <div class="container text-center">
-        <h3 class="p-4" style="color:maroon;">Welcome <%= user.username %> </h3>
-        <h3 class="p-2" style="color:maroon;">Let's Shrink Some Links !! </h3>
-        <a class="btn btn-danger" href="/logout">Logout</a>
-    </div>
-        <div class="container" style="align-content: center !important;">
-            <h1>URL Shrinker</h1>
-            <form action="/shortUrls" method="POST" class="my-4 form-inline">
-                <label for="fullUrl" class="sr-only">URL</label>
-                <input required placeholder="Full URL" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
-                <button type="submit" class="btn btn-success">Shrink Url</button>
-            </form>
-        
-            <table style="align-content: center !important;" class="table table-stried table-responsive">
-                <thead>
-                    <tr>
-                        <th>Full URL</th>
-                        <th>Shrinked URL</th>
-                        <th>Click Count</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% shortUrls.forEach(shortUrl => { %>
-                        <tr>
-                            <td><a href="<%=shortUrl.full%>"><%=shortUrl.full.substring(0,50)%></a></td>
-                            <td><a href="<%=shortUrl.short%>"><%=shortUrl.short%></a></td>
-                            <td><%=shortUrl.clicks%></td>
-                        </tr>
-                    <%});%>
-                    
-                </tbody>
-            </table>
+    <!-- Navbar begin -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">LC</a>
+            <a class="nav-link active" aria-current="page" href="/addPost">Create Posts</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <!-- <a class="nav-link active" aria-current="page" href="/addPost">Create Posts</a> -->
+                    </li>
+                </ul>
+            </div>
         </div>
-    
+    </nav>
+    <!-- Navbar ends -->
+    <section class="text-card">
+        <div class="content">
+            <div class="author-section">
+
+                <a href="#" class="author-name-link">
+                    <h6 class="author-name">Creative Writing & Illustration Competition</h6>
+                </a>
+            </div>
+            <p>
+                Rules:
+                <ul>
+                    <li>Students can submit their essays, articles or poems on any topic on this platform</li>
+                    <li>Language of the posts should be English mandatorily</li>
+                    <li>There is no word limit</li>
+                    <li>A person can post more than once</li>
+                    <li>Please use your college EmailID only for submitting posters and posting on the website</li>
+                    <li>Winners of the competition will be announced via mail</li>
+                    <li>Your posts might take a little while to show up as we review them before publishing</li>
+                </ul>
+            </p>
+
+            <h6>Host: Ritik Katiyar, Kumar Mangesh & Mehul Bhandari</h6>
+        </div>
+    </section>
+
+
+    <% posts.forEach(post => { %>
+    <section class="text-card">
+        <div class="content">
+            <div class="author-section">
+
+                <a href="#" class="author-name-link">
+                    <h6 class="author-name"><%=post.title%></h6>
+                </a>
+            </div>
+            <p>
+                <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aliquam aliquam diam sit amet elit hendrerit rutrum.
+                Nam egestas laoreet ligula, ac elementum risus.
+                Aliquam volutpat ex eget elit venenatis, vel luctus arcu pulvinar. -->
+                <%=post.content%>
+            </p>
+
+            <h6>Author: <%=post.author%></h6>
+        </div>
+    </section>
+    <%});%>
+
 </body>
 
 </html>

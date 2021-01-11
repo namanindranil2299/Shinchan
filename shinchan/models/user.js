@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 
 const userschema = new mongoose.Schema({
     
-    time:{
-        type:String,
-        stamp:Date.now()
-    },
     author: {
         type: String,
         required: true,
@@ -21,6 +17,14 @@ const userschema = new mongoose.Schema({
     content: {
         type: String,
         required:true,
+    },
+    time:{
+        type:String,
+        default:Date.now(),
+    },
+    flag:{
+        type:String,
+        default:0
     }
 });
 
